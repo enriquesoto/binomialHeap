@@ -2,20 +2,31 @@
 #define BINOMIALHEAP_H
 
 #include <nodob.h>
+#include <QDebug>
 
 class BinomialHeap
 {
+
+    typedef typename list<NodoB*>::iterator myIterator;
+
 public:
+
     BinomialHeap();
-    link(NodoB a,NodoB b);
-    merge(BinomialHeap h1, BinomialHeap h2);
+    void link(NodoB &a,NodoB &b);
+    BinomialHeap *merge(BinomialHeap &h1, BinomialHeap &h2);
+    BinomialHeap *junction(BinomialHeap &b1, BinomialHeap &b2);
+    void decreaseKey(BinomialHeap &b,NodoB &node,int newKey);
+    NodoB *extractMin(BinomialHeap &b);
+    NodoB * findMin(list<NodoB*> &heap);
+    void insert(BinomialHeap &b,NodoB &a);
 
 
 private:
 
     list<NodoB*> heap;
     NodoB minPointer;
-    NodoB* minDegree(NodoB,NodoB);
+    NodoB* minDegree(NodoB &a,NodoB &b);
+
 
 
 };

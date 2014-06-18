@@ -10,11 +10,9 @@ class NodoB
 {
 public:
     NodoB();
-
-private:
     int key;
     NodoB *parent;
-    list<*NodoB> pChild;
+    list<NodoB *> pChild;
     int degree;
     NodoB *sibling;
 
