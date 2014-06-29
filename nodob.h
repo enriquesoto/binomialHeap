@@ -2,6 +2,7 @@
 #define NODOB_H
 
 #include <list>
+#include <stddef.h>
 
 using namespace std;
 
@@ -14,7 +15,10 @@ public:
     NodoB *parent;
     list<NodoB *> pChild;
     int degree;
-    NodoB *sibling;
+    NodoB *siblingDer;
+    NodoB *siblingIzq;
+    void setKey(int);
+    ~NodoB();
 
 };
 
